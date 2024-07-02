@@ -1,0 +1,80 @@
+
+
+meta 
+{
+    title: "Kits street lights";
+    description: "Highlight Kits bus stops with directional arrows";
+    version: "1.6_2018-11-02";
+    author: "Kits";
+    min-josm-version: "8260";
+}
+
+node|z16-[highway=street_lamp]
+{
+  icon-image: "icons/pole_generic.png";
+  icon-width:30;
+}
+
+node|z16-[highway=street_lamp][support=pole][lamp_mount=straight_mast]
+{
+  icon-image: "icons/pole_straight.png";
+}
+
+node|z16-[highway=street_lamp][support=pole][lamp_mount=angled_mast]
+{
+  icon-image: "icons/pole_angled.png";
+}
+
+node|z16-[highway=street_lamp][support=pole][lamp_mount=bent_mast]
+{
+  icon-image: "icons/pole_bent.png";
+}
+
+node|z16-[highway=street_lamp][support=pole][lamp_mount=high_mast]
+{
+  icon-image: "icons/pole_high.png";
+  icon-width:35;
+}
+
+node|z16-[highway=street_lamp][support=pedestal]
+{
+  icon-image: "icons/pedestal.png";
+}
+
+node|z16-[highway=street_lamp][support=wall]
+{
+  icon-image: "icons/wall.png";
+}
+
+
+node|z16-[highway=street_lamp][support=wall_mounted]
+{
+  icon-image: "icons/wall_mounted.png";
+}
+
+node|z18-[highway=street_lamp][ref] 
+{
+  text-color: blue;
+  font-size: 16;
+  text: tag("ref");
+  text-halo-radius: 2;
+  text-offset-x: 8;
+  text-offset-y: 5;
+  z-index:3.0;
+}
+
+way|z14-[lit=yes]::underlay
+{
+  z-index: -1;
+  width: 8;
+  color: white;
+  opacity: 0.65;
+}
+
+way|z14-[lit=no]::underlay
+{
+  z-index: -1;
+  width: 8;
+  color: red;
+  opacity: 0.65;
+}
